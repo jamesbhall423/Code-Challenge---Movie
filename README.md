@@ -9,7 +9,7 @@
 ## ABOUT
 
 * Author James Hall
-* Version 0.0
+* Version 0.0 - (timestamp 40min)
 
 ## VERSIONS (see git history)
 
