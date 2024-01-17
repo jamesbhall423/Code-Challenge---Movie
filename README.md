@@ -5,19 +5,20 @@
 * NodeJS installed from https://nodejs.org/en/download/
 * Tested using msi for 64-bit Windows 11 (Information in Settings / System / About)
 * Automatically install neccesary tools in the installer setup
+* For tests replace WEBSITE_NAME in webapp/index.html with the IP address of the local server (Settings / Network and Internet)
 
 ## ABOUT
 
 * Author James Hall
-* Version 0.0 - (timestamp 40min)
+* Version 0.1 (timestamp 2hr 20min)
 
 ## VERSIONS (see git history)
 
-* 0.0 Setup Structure - No functionality, just layout out anticipated methods.
+* 0.1 NodeJS test - able to get the client and server code to communicate (2hr 20min)
+* 0.0 Setup Structure - No functionality, just layout out anticipated methods. (40min)
 
 ## ANTICIPATED FUTURE VERSIONS
 
-* 0.1 NodeJS test
 * 0.2 TMDB API test
 * 0.3 Console Retrival App
 * 1.0 TMDB search webpage
