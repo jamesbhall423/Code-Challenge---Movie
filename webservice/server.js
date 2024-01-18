@@ -61,7 +61,7 @@ async function getTMDB(search) {
     method: 'GET',
     headers: {
         accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NWM1NGY3MTM3YjY4YmFiOWU5YWU4Njc0NGMxYTM5ZCIsInN1YiI6IjY1YTg4Mjg2MGU1YWJhMDEzMjdkYmJmZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.75bayZeqxceeaDBLNxCAd_dVAvNrQLtY8B5NnxBck2U'
+        Authorization: 'Bearer '+READ_ACCESS_TOKEN
     }
     };
 
