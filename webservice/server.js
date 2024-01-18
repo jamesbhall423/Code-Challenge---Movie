@@ -1,5 +1,9 @@
 //https://www.youtube.com/watch?v=-HPZ1leCV8k&list=PL4cUxeGkcC9jsz4LDYc6kv3ymONOKxwBU&index=3
 
+
+const API_KEY = "YOUR API KEY";
+const READ_ACCESS_TOKEN = "YOUR READ ACCESS TOKEN";
+
 const http = require('http');
 const fs = require("fs");
 
@@ -17,12 +21,12 @@ const server = http.createServer((req, res) => {
         res.setHeader('Content-Type', 'image/png');
         getFile("./webapp/favicon.ico",res);
     } else {
-        doSearch(res,searchFromURL(req.url+""));
+        doSearch(res,req.url.searchParams["search"]);
     }
 });
 
-server.listen(3003, 'localhost', () => {
-    console.log('listening for request on port 3003');
+server.listen(3004, 'localhost', () => {
+    console.log('listening for request');
 });
 
 function getFile(file, res) {
@@ -50,5 +54,19 @@ function searchFromURL(url) {
 }
 
 async function getTMDB(search) {
+    const fetch = require('node-fetch');
 
+    const url = 'https://api.themoviedb.org/3/search/movie?query='+search+'&include_adult=false&language=en-US&page=1';
+    const options = {
+    method: 'GET',
+    headers: {
+        accept: 'application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NWM1NGY3MTM3YjY4YmFiOWU5YWU4Njc0NGMxYTM5ZCIsInN1YiI6IjY1YTg4Mjg2MGU1YWJhMDEzMjdkYmJmZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.75bayZeqxceeaDBLNxCAd_dVAvNrQLtY8B5NnxBck2U'
+    }
+    };
+
+    fetch(url, options)
+    .then(res => res.json())
+    .then(json => console.log(json))
+    .catch(err => console.error('error:' + err));
 }
